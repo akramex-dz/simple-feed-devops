@@ -1,8 +1,8 @@
-"# simple-feed-devops" 
+# simple-feed-devops 
 
 Here you'll find some usefull script I realised under my simple-feed project, I'll add intresting stuff now and then.
 
-# Running MongoDb to MySQL Migration Script
+## Running MongoDb to MySQL Migration Script
 
 Follow these steps to run the migration script:
 
@@ -28,5 +28,5 @@ Follow these steps to run the migration script:
    python migration_script.py
    ```
 
-Remember to replace the placeholders with your actual data.
+**Remember to replace the placeholders with your actual data.**
 
