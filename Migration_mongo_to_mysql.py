@@ -66,10 +66,13 @@ for like in likes:
 
 
 # select the last version of post, comments and likes tables and duplicate each table into a new table calles Post, Comment and Like
-mysql_cursor.execute(f'SELECT * FROM Post_{now} INTO Post')
-mysql_cursor.execute(f'SELECT * FROM Comment_{now} INTO Comment')
-mysql_cursor.execute(f'SELECT * FROM Like_{now} INTO Like')
+mysql_cursor.execute('DROP TABLE IF EXISTS Post_latest')
+mysql_cursor.execute('DROP TABLE IF EXISTS Comment_latest')
+mysql_cursor.execute('DROP TABLE IF EXISTS Like_latest')
 
+mysql_cursor.execute(f'CREATE TABLE Post_latest AS SELECT * FROM Post_{now}')
+mysql_cursor.execute(f'CREATE TABLE Comment_latest AS SELECT * FROM Comment_{now}')
+mysql_cursor.execute(f'CREATE TABLE Like_latest AS SELECT * FROM Like_{now}')
 
 # Commit changes and close connections
 mysql_db.commit()
